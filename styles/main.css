@@ -3,3 +3,5 @@ table td:nth-child(1) {width:10px;}
 table td:nth-child(2) {width:150px;}
 table td:nth-child(3) {width:200px;}
 .hidden {display: none;}
+.red {color:red;}
+.green {color:green;}
