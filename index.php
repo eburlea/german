@@ -5,7 +5,7 @@ $nouns = array();
 $i=0;
 while($row = mysql_fetch_array($result)){
     $nouns[$i]['singular']['noun'] = $row['noun_sg'];
-    $nouns[$i]['singular']['article'] = ($row['gender'] == 'M' ? 'der' : ($row['gender'] == 'F' ? 'die' : 'das'));
+    $nouns[$i]['singular']['article'] = ($row['gender'] == 'M' ? 'der' : ($row['gender'] == 'F' ? 'die' : ($row['gender'] == 'N' ? 'das' : 'der/die')));
     $nouns[$i]['plural']['noun'] = $row['noun_pl'];
     $nouns[$i]['plural']['article'] = 'die';
     $nouns[$i++]['translation'] = $row['translation'];
@@ -20,9 +20,10 @@ while($row = mysql_fetch_array($result)){
     <table>
         <tr>
             <td>
-                <a href="#" id="der" class="article">der</a>
-                <a href="#" id="die" class="article">die</a>
-                <a href="#" id="das" class="article">das</a>
+                <a href="#" id="der" class="article">der</a><br />
+                <a href="#" id="die" class="article">die</a><br />
+                <a href="#" id="das" class="article">das</a><br />
+                <a href="#" id="der/die" class="article">der/die</a>
             </td>
             <td>
                 <span id="noun"></span>
